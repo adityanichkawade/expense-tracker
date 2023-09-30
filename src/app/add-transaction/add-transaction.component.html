@@ -1,0 +1,37 @@
+<h3>Add new transaction</h3>
+<form
+  id="form"
+  (ngSubmit)="onSubmit(transactionForm)"
+  #transactionForm="ngForm"
+>
+  <div class="form-control">
+    <label for="text">Text</label>
+    <input
+      type="text"
+      id="text"
+      name="text"
+      #text="ngModel"
+      required
+      [(ngModel)]="model.text"
+      placeholder="Enter text..."
+    />
+  </div>
+  <div class="form-control">
+    <label for="amount"
+      >Amount <br />
+      (negative - expense, positive - income)</label
+    >
+    <input
+      type="number"
+      id="amount"
+      name="amount"
+      #amount="ngModel"
+      required
+      [(ngModel)]="model.amount"
+      placeholder="Enter amount..."
+    />
+  </div>
+  <button [disabled]="!transactionForm.form.valid" class="btn">
+    Add transaction
+  </button>
+</form>

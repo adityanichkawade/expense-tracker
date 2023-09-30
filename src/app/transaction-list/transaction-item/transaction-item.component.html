@@ -1,0 +1,8 @@
+<li [class]="transaction.amount > 0 ? 'plus' : 'minus'">
+  {{ transaction.text }}
+  <span
+    >{{ transaction.amount > 0 ? "+" : "-" }}${{
+      amount(transaction.amount)
+    }}</span
+  ><button class="delete-btn" (click)="delete(transaction.id)">x</button>
+</li>
